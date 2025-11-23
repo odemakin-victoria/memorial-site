@@ -4,7 +4,8 @@ import Loader from "./components/pre-loader";
 import Navigation from "./components/navigation-menu";
 import HeroSection from "./components/Hero";
 import Obituary from "./pages/Obituary";
-import Eulogies from "./pages/Favorites";
+import Favorites from "./pages/Favorites";
+import Eulogies from "./pages/Eulogies";
 import Service from "./pages/Service";
 import MemoryWall from "./pages/MemoryWall";
 import Gallery from "./pages/Gallery";
@@ -24,6 +25,8 @@ export default function MemorialPage() {
           <HeroSection />
           <Obituary />
           <Timeline />
+					          <Favorites />
+
           <Eulogies />
           <Gallery />
           <MemoryWall />
