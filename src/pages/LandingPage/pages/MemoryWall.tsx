@@ -88,7 +88,7 @@ const MemoryWall = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">
             A Wall of Remembrance
           </h2>
-          <div className="h-[5px] bg-[#fcbb68] w-12 mx-auto rounded mb-8"></div>
+          <div className="h-[5px] bg-gradient-to-r from-transparent via-[#fcbb68] to-transparent divider-line mx-auto rounded"></div>
           
           <p className="text-gray-700 italic max-w-2xl mx-auto mb-8">
             "To live in the hearts we leave behind is not to die."

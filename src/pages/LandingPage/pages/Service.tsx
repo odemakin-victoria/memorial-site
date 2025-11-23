@@ -10,7 +10,7 @@ const Service = () => {
       <div className="text-center mb-12">
         <p className="text-sm text-gray-600 mb-2 tracking-wide">In His Loving Memory</p>
         <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">Where We Gather to Remember</h2>
-        <div className="h-[5px] bg-[#fcbb68] w-12 mx-auto rounded"></div>
+          <div className="h-[5px] bg-gradient-to-r from-transparent via-[#fcbb68] to-transparent divider-line mx-auto rounded"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4">

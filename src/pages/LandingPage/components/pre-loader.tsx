@@ -8,12 +8,12 @@ const Loader = ({ onLoadComplete }: { onLoadComplete: () => void }) => {
     // Start fade out animation
     const fadeTimer = setTimeout(() => {
       setFadeOut(true);
-    }, 2500);
+    }, 5500);
 
     // Complete loading
     const completeTimer = setTimeout(() => {
       onLoadComplete();
-    }, 3000);
+    }, 6000);
 
     return () => {
       clearTimeout(fadeTimer);

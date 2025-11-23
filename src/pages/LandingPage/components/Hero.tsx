@@ -20,7 +20,7 @@ const HeroSection = () => {
           <h1 className="text-3xl md:text-4xl uppercase font-semibold animate-fade-in-up inline-block pb-2">
             Olaseni Babatunde Olagbaju Memorial
           </h1>
-          <div className="h-[5px] bg-[#fcbb68] w-12 mx-auto rounded"></div>
+          <div className="h-[5px] bg-gradient-to-r from-transparent via-[#fcbb68] to-transparent divider-line mx-auto rounded"></div>
         </div>
 
         {/* SEO: Added descriptive subtitle with dates and keywords */}
@@ -28,7 +28,7 @@ const HeroSection = () => {
           Celebrating the Life and Legacy of Olaseni Babatunde Olagbaju
         </h2>
         <p className="text-gray-600 font-normal text-base md:text-lg mb-6">
-          1951 - 2025 | Beloved Father, Leader, and Inspiration
+          1951 - 2025 | Beloved Father, Grand Father, Leader, and Inspiration
         </p>
 
         <div className="flex flex-col mt-5 md:flex-row items-center justify-center gap-8 md:gap-16 max-w-5xl mx-auto">

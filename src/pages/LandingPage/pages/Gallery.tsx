@@ -41,8 +41,8 @@ import Photo33 from "../../../../public/assets/images/daddy-brother.jpg"
 // SEO-Enhanced Alt Text with Full Name
 const galleryImages = [
   { id: 1, url: Photo1, alt: 'Olaseni Babatunde Olagbaju wedding day with family' },
-  { id: 2, url: Photo2, alt: 'Olaseni Olagbaju with wife - cherished moment together' },
   { id: 3, url: Photo3, alt: 'Olaseni Babatunde Olagbaju with child - father and son bond' },
+  { id: 2, url: Photo2, alt: 'Olaseni Olagbaju with wife - cherished moment together' },
   { id: 4, url: Photo4, alt: 'Olaseni Olagbaju portrait - distinguished gentleman' },
   { id: 5, url: Photo5, alt: 'Olaseni Babatunde Olagbaju at daughter wedding celebration' },
   { id: 6, url: Photo6, alt: 'Olaseni Olagbaju with bride - proud father moment' },
@@ -248,7 +248,7 @@ const GalleryPage: React.FC<GalleryPageProps> = ({ onBack }) => {
           <p className="text-lg text-gray-600 mb-4">
             Celebrating memories from 1951 to 2025
           </p>
-          <div className="h-[5px] bg-[#fcbb68] w-12 mx-auto rounded animate-expand-width"></div>
+          <div className="h-[5px] bg-gradient-to-r from-transparent via-[#fcbb68] to-transparent divider-line mx-auto rounded"></div>
         </header>
 
         <div className="space-y-6">

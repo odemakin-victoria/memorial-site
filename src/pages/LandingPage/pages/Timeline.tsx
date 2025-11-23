@@ -89,7 +89,7 @@ const Timeline = () => {
           <p className="text-base lg:text-lg text-gray-600 mb-4 animate-fade-in animation-delay-200">
             Moments That Mattered | 1951 - 2025
           </p>
-          <div className="h-[5px] bg-[#fcbb68] w-12 mx-auto rounded animate-expand-width"></div>
+          <div className="h-[5px] bg-gradient-to-r from-transparent via-[#fcbb68] to-transparent divider-line mx-auto rounded"></div>
         </header>
 
         <div className="max-w-5xl mx-auto">

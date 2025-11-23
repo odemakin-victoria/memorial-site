@@ -7,10 +7,10 @@ const Navigation = () => {
   const menuItems = [
     'Biography',
     'Timeline',
+		'Favorites',
     'Eulogies',
     'Gallery',
-    'Family tree',
-    'Memory wall',
+    'Leave a Tribute',
     'Service'
   ];
 
