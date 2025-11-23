@@ -79,7 +79,7 @@ const MemoryWall = () => {
   };
 
   return (
-    <section id="memory-wall" className="py-16 px-4 bg-gradient-to-b from-white to-orange-50">
+    <section id="leave-a-tribute" className="py-16 px-4 bg-gradient-to-b from-white to-orange-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-sm text-gray-600 mb-2 tracking-wide ">
@@ -100,7 +100,7 @@ const MemoryWall = () => {
             onClick={() => setIsModalOpen(true)}
             className="bg-[#deac6c] hover:bg-[#8a7160] text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
-            Contribute →
+            Leave a Tribute →
           </button>
         </div>
 

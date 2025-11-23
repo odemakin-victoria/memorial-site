@@ -26,7 +26,6 @@ import Photo21 from "../../../public/assets/images/daddy-mummy-3.jpg";
 import Photo22 from "../../../public/assets/images/daddy-mummy-son-1.jpg";
 import Photo23 from "../../../public/assets/images/daddy-sons.jpg";
 import Photo24 from "../../../public/assets/images/daddy-wdding-party.jpg";
-import Photo25 from "../../../public/assets/images/daddy-wedding-1.jpg";
 import Photo26 from "../../../public/assets/images/daddy-wedding-3.jpg";
 import Photo27 from "../../../public/assets/images/daddy-wedding-4.jpg";
 import Photo28 from "../../../public/assets/images/Olaseni-Babatunde-Olagbaju-1.jpg";
@@ -34,8 +33,7 @@ import Photo28 from "../../../public/assets/images/Olaseni-Babatunde-Olagbaju-1.
 import Photo29 from "../../../public/assets/images/daddy-silbings.jpg";
 
 import Photo30 from "../../../public/assets/images/Olaseni-Babatunde-Olagbaju-4.jpg";
-import Photo31 from "../../../public/assets/images/WhatsApp Image 2025-11-18 at 21.36.48_6dcbae00.jpg";
-import Photo32 from "../../../public/assets/images/daddy-mummy-4.jpg";
+
 import Photo33 from "../../../public/assets/images/daddy-brother.jpg";
 import Photo35 from "../../../public/assets/images/daddy-all-silbings.jpg";
 import Photo36 from "../../../public/assets/images/daddy-baby-1.jpg";
@@ -50,33 +48,40 @@ const galleryImages = [
   { id: 0, url: Photo0, alt: "young daddy" },
   { id: 2, url: Photo2, alt: "Family in water" },
   { id: 1, url: Photo1, alt: "Family outdoor moment" },
-  { id: 30, url: Photo30, alt: "Portrait" },
   { id: 3, url: Photo3, alt: "Indoor family time" },
   { id: 4, url: Photo4, alt: "Sunset family" },
-  { id: 6, url: Photo6, alt: "Beach time" },
-  { id: 7, url: Photo7, alt: "Family outdoor moment", objectFit: "contain" },
   { id: 8, url: Photo8, alt: "Family in water" },
   { id: 9, url: Photo9, alt: "Indoor family time", objectFit: "contain" },
+  { id: 7, url: Photo7, alt: "Family outdoor moment", objectFit: "contain" },
+  { id: 6, url: Photo6, alt: "Beach time" },
+  { id: 20, url: Photo20, alt: "Special day" },
+
   { id: 10, url: Photo10, alt: "Sunset family", objectFit: "contain" },
-  { id: 28, url: Photo28, alt: "Portrait" },
-  { id: 11, url: Photo11, alt: "Happy moments" },
   { id: 12, url: Photo12, alt: "Beach time" },
-  { id: 26, url: Photo26, alt: "Wedding moment" },
   { id: 13, url: Photo13, alt: "Family outdoor moment", objectFit: "contain" },
-  { id: 14, url: Photo14, alt: "Sunset family" },
-  { id: 15, url: Photo15, alt: "Happy moments" },
+	   { id: 15, url: Photo15, alt: "Happy moments" },
+ 
+	{ id: 36, url: Photo36, alt: "Family photo", objectFit: "contain" },
+
+	{ id: 14, url: Photo14, alt: "Sunset family" },
+    { id: 11, url: Photo11, alt: "Happy moments" },
+  { id: 30, url: Photo30, alt: "Portrait" },
+  { id: 28, url: Photo28, alt: "Portrait" },
+	
   { id: 16, url: Photo16, alt: "Beach time" },
   { id: 17, url: Photo17, alt: "Family moment" },
   { id: 19, url: Photo19, alt: "Together", objectFit: "contain" },
-  { id: 20, url: Photo20, alt: "Special day" },
   { id: 21, url: Photo21, alt: "Family time", objectFit: "contain" },
-  { id: 22, url: Photo22, alt: "With sons" },
+    { id: 26, url: Photo26, alt: "Wedding moment" },
+
+		{ id: 27, url: Photo27, alt: "Wedding day" },
+	{ id: 22, url: Photo22, alt: "With sons" },
   { id: 24, url: Photo24, alt: "Wedding party" },
-  { id: 33, url: Photo33, alt: "Together" },
-  { id: 27, url: Photo27, alt: "Wedding day" },
-  { id: 29, url: Photo29, alt: "Portrait" },
-  { id: 35, url: Photo35, alt: "Wedding celebration" },
-  { id: 36, url: Photo36, alt: "Family photo", objectFit: "contain" },
+  
+	{ id: 29, url: Photo29, alt: "Portrait" },
+    { id: 33, url: Photo33, alt: "Together" },
+
+	{ id: 35, url: Photo35, alt: "Wedding celebration" },
   { id: 37, url: Photo37, alt: "Together" },
   { id: 38, url: Photo38, alt: "Family gathering" },
   { id: 39, url: Photo39, alt: "Wedding celebration" },

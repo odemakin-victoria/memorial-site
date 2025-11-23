@@ -6,11 +6,11 @@ const Navigation = () => {
 
   const menuItems = [
     'Biography',
+    'Leave a Tribute',
     'Timeline',
 		'Favorites',
     'Eulogies',
     'Gallery',
-    'Leave a Tribute',
     'Service'
   ];
 
@@ -22,14 +22,13 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (section: string) => {
-    const element = document.getElementById(section.toLowerCase().replace(' ', '-'));
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
-  };
-
+ const scrollToSection = (section: string) => {
+  const element = document.getElementById(section.toLowerCase().replace(/ /g, '-'));
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
+  }
+};
   return (
     <>
       <nav
