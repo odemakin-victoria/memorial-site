@@ -236,7 +236,7 @@ const Obituary = () => {
           </p>
 
           <p className="mb-4 clear-left paragraph-hover animate-fade-in-up delay-600">
-            Born on June 24, 1951, to Joseph Oladimeji Olagbaju and Princess Mobolaji Olagbaju (née Ademiluyi), Olaseni was the cherished second child in a dynamic family of nine. His foundational years were spent at St Stephen Academy (1957–1963) and Molusi College, Ijebu Igbo (1963–1968), where the seeds of his intellectual curiosity were first sown. His passion led him to Obafemi Awolowo University (OAU), where he graduated in 1974 with a BSc in Microbiology.
+            Born on June 24, 1951, to Joseph Oladimeji Olagbaju and Princess Mobolaji Olagbaju (née Ademiluyi), Olaseni was the cherished second child in a dynamic family of nine. His foundational years were spent at St Stephen A, Ile Ife (1957–1963) and Molusi College, Ijebu Igbo (1963–1968), where the seeds of his intellectual curiosity were first sown. His passion led him to Obafemi Awolowo University (OAU), where he graduated in 1974 with a BSc in Microbiology.
           </p>
 
           <p className="mb-4 paragraph-hover animate-fade-in-up delay-100">
