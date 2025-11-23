@@ -221,10 +221,10 @@ const MemoryWall = () => {
             {displayedMemories.map((memory, index) => (
   <div
     key={memory.id}
-    className="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 p-6 transform hover:-translate-y-1 animate-scaleIn"
+              className="border-l-2 border-gray-200 pl-6 md:pl-10 py-4 animate-slide-in hover:border-[#fcbb68] transition-all duration-500"
     style={{ animationDelay: `${index * 100}ms` }}
   >
-    <div className="flex justify-between items-start mb-4">
+    <div className="flex justify-between items-start mb-2">
       <p className="text-sm text-gray-500 italic">{memory.dateCreated}</p>
       <button
         onClick={() => handleLike(memory.id)}
@@ -243,11 +243,11 @@ const MemoryWall = () => {
       </button>
     </div>
     
-    <p className="text-gray-700 mb-4 font-light whitespace-pre-line leading-relaxed">
+    <p className="text-gray-700 mb-2 font-light whitespace-pre-line leading-relaxed">
       {memory.tribute}
     </p>
     
-    <div className="flex items-center gap-4 mt-6">
+    <div className="flex items-center gap-2 mt-3">
       
       <p className="text-[#deac6c] font-serif text-lg ml-auto">
         {memory.fullName}
