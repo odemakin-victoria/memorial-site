@@ -7,30 +7,30 @@ const eulogiesData = [
     id: 1,
     name: "Mrs. Funke Olagbaju",
     title: "",
-    message: "Seni, your departure was a great shock to us all but we know you are in a better place. You were a generous, hardworking and a kind hearted soul. You will be missed and your memories will always be remembered. I pray that God’s comfort will continue to reside with us and the entire family. We love and miss you. May your soul rest in eternal peace. Sunre ooo.",
+		message:'Seni, your departure was a great shock to us all but we know you are in a better place. You were a generous, hardworking and kind hearted soul. You will be missed! Your memories will always be remembered. I pray that God’s comfort will continue to reside with us and the entire family. We love and miss you. May your soul rest in eternal peace. Omo Arewa , Omo Ajiri ile, Omo Oloke ona.Sunre ooo.',
     relationship: ""
   },
-  // {
-  //   id: 2,
-  //   name: "Adewale Olagbaju",
-  //   title: "Eldest Son",
-  //   message: "Dad, you taught me what it means to be a man of integrity and honor. Your strength, kindness, and unwavering support shaped who I am today. You were not just a father but a mentor and friend. Your legacy will continue through us. We love you forever, Dad.",
-  //   relationship: "Son"
-  // },
-  // {
-  //   id: 3,
-  //   name: "Funmilayo Olagbaju-Johnson",
-  //   title: "Daughter",
-  //   message: "Daddy, you were my first love and my hero. Your gentle words and warm embrace made every problem seem smaller. You believed in me when I didn't believe in myself. Thank you for being the best father a daughter could ask for. Your memory will forever be a blessing.",
-  //   relationship: "Daughter"
-  // },
-  // {
-  //   id: 4,
-  //   name: "Tunde Olagbaju",
-  //   title: "Youngest Son",
-  //   message: "To the man who showed me how to dream big and work hard - thank you, Dad. Your stories, your laughter, and your endless encouragement made life brighter. You taught us that family comes first, always. Rest well, knowing you raised us right. We'll make you proud.",
-  //   relationship: "Son"
-  // },
+  {
+    id: 2,
+    name: "Gbolahan Olagbaju",
+    title: "Son",
+		message:"I knew him as an extremely generous man, kind hearted, a loving man, strong and an intelligent man. He tried his best to live his life the best way he could by impacting lives positively. These memories of him will never fade in my mind and I believe he has finally found everlasting peace.  They say “death is not the greatest loss in life. The greatest loss is what dies inside while still alive”. This is a great example of how my Dad lived his life. I will always respect him because he lived a full and vibrant life. He tried his best until the end and he never gave up. We love you Dad and we know your spirit will always be with us.Nle o, Dubionde, Moriolowu, Omo Arewa, Omo Ajirile, Omo Oloke Ona, Soko, Omo Aboke Ipako Wole Soya Roro.Sun re o May your soul rest in eternal peace. You will never be forgotten. Love you Dad. ",
+    relationship: "Son"
+  },
+  {
+    id: 3,
+    name: "Yetunde",
+    title: "Sister",
+		message:"Good bye ‘Omo Arewa’To say I miss you my dearest brother  is an understatement. We spoke a week before your passing but I had no clue that would be our last conversation. My heart still aches with sadness.You will be remembered as a wonderful brother and a generous and great friend. The truth is, at one point in our lives, we all will have to say goodbye, so for now till we meet again in glory to part no more. Goodbye my darling brother.",
+    relationship: "Your dear Sister"
+  },
+  {
+    id: 4,
+    name: "Justice Iyabo Kasali (Rtd)",
+    title: "Sister",
+		message:"To my darling Brother: Olaseni Babatunde Olagbaju.Hmmmmmm!!!!brother Seni. You were not only a brother to me, you were my friend and I love you so much Sene. Your heart was so pure, you relate to each and everyone as if you were pals. Never a dull moment with you, you were kind, jovial and full of life. My brother I know you are with your creator now and I so much missed you. I know you were in a better place and we shall meet one day. ‘Nle o ‘Laseni, Obilohun, Dubionde’ (as our mummy always greeted you) Omo Arewa , Omo Ajiri ile, Omo Oloke ona. Omo aboke ipako Wole soya roro Omo soko soko nmogun baba oguntunwase. Oloye nyegbeyegbe baba Adeyemi. Popotan bi egbe omo elomirin. Sleep on brother Seni . May Eternal Rest Grant unto you, May you rest in Peace.🙏🏻",
+    relationship: "Your dear Sister"
+  },
   // {
   //   id: 5,
   //   name: "Rev. Dr. Samuel Adeyemi",
@@ -49,10 +49,14 @@ const eulogiesData = [
 
 const EulogiesSection = () => {
   const [expandedId, setExpandedId] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   const toggleExpand = (id) => {
     setExpandedId(expandedId === id ? null : id);
   };
+
+  const displayedEulogies = showAll ? eulogiesData : eulogiesData.slice(0, 5);
+
 
   return (
 		  <Section id="eulogies" title="">
@@ -71,7 +75,7 @@ const EulogiesSection = () => {
 
         {/* Eulogies List */}
         <div className="space-y-4 md:space-y-8">
-          {eulogiesData.map((eulogy, index) => (
+          {displayedEulogies.map((eulogy, index) => (
             <div
               key={eulogy.id}
               className="border-l-2 border-gray-200 pl-6 md:pl-10 py-4 animate-slide-in hover:border-[#fcbb68] transition-all duration-500"
@@ -101,14 +105,29 @@ const EulogiesSection = () => {
               {/* Author info */}
               <div className="flex items-baseline gap-3">
                 <h3 className="text-lg md:text-xl font-medium text-gray-900">{eulogy.name}</h3>
-                <span className="text-gray-400">—</span>
-                <p className="text-sm md:text-base text-gray-500">{eulogy.title}</p>
+                  {eulogy.title && (
+    <>
+      <span className="text-gray-400">—</span>
+      <p className="text-sm md:text-base text-gray-500">{eulogy.title}</p>
+    </>
+  )}
               </div>
             </div>
           ))}
         </div>
       </div>
 
+ {/* Show More Button */}
+      {eulogiesData.length > 4 && (
+        <div className="text-center mt-8">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="px-6 py-3 bg-[#fcbb68] text-white rounded-lg hover:bg-[#e6a857] transition-colors duration-300"
+          >
+            {showAll ? 'Show Less' : `See More Eulogies (${eulogiesData.length - 5} more)`}
+          </button>
+        </div>
+      )}
       <style jsx>{`
         @keyframes fadeIn {
           from {
