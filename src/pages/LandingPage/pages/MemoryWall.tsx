@@ -4,14 +4,14 @@ import { X, Heart, Upload, User, MessageSquare } from 'lucide-react';
 const MemoryWall = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [memories, setMemories] = useState([
-    {
-      id: 1,
-      date: 'September 27, 2023',
-      message: 'In memory of Raymond H. Moore, a beacon of love and wisdom.\nHis legacy of kindness and his genuine love for people will forever inspire us. Though he\'s gone, his spirit lives on in our hearts.\n\nFarewell, dear friend.',
-      author: 'Clayton Steinberg',
-      image: '/api/placeholder/200/200',
-      likes: 0
-    }
+    // {
+    //   id: 1,
+    //   date: 'September 27, 2023',
+    //   message: 'In memory of Raymond H. Moore, a beacon of love and wisdom.\nHis legacy of kindness and his genuine love for people will forever inspire us. Though he\'s gone, his spirit lives on in our hearts.\n\nFarewell, dear friend.',
+    //   author: 'Clayton Steinberg',
+    //   image: '/api/placeholder/200/200',
+    //   likes: 0
+    // }
   ]);
   const [formData, setFormData] = useState({
     message: '',

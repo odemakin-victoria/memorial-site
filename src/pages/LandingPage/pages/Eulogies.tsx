@@ -6,9 +6,9 @@ const eulogiesData = [
   {
     id: 1,
     name: "Mrs. Funke Olagbaju",
-    title: "Loving Wife",
+    title: "",
     message: "Seni, your departure was a great shock to us all but we know you are in a better place. You were a generous, hardworking and a kind hearted soul. You will be missed and your memories will always be remembered. I pray that God’s comfort will continue to reside with us and the entire family. We love and miss you. May your soul rest in eternal peace. Sunre ooo.",
-    relationship: "Wife"
+    relationship: ""
   },
   // {
   //   id: 2,
