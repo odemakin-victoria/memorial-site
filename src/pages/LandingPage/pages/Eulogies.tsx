@@ -10,41 +10,41 @@ const eulogiesData = [
     message: "Seni, your departure was a great shock to us all but we know you are in a better place. You were a generous, hardworking and a kind hearted soul. You will be missed and your memories will always be remembered. I pray that God’s comfort will continue to reside with us and the entire family. We love and miss you. May your soul rest in eternal peace. Sunre ooo.",
     relationship: "Wife"
   },
-  {
-    id: 2,
-    name: "Adewale Olagbaju",
-    title: "Eldest Son",
-    message: "Dad, you taught me what it means to be a man of integrity and honor. Your strength, kindness, and unwavering support shaped who I am today. You were not just a father but a mentor and friend. Your legacy will continue through us. We love you forever, Dad.",
-    relationship: "Son"
-  },
-  {
-    id: 3,
-    name: "Funmilayo Olagbaju-Johnson",
-    title: "Daughter",
-    message: "Daddy, you were my first love and my hero. Your gentle words and warm embrace made every problem seem smaller. You believed in me when I didn't believe in myself. Thank you for being the best father a daughter could ask for. Your memory will forever be a blessing.",
-    relationship: "Daughter"
-  },
-  {
-    id: 4,
-    name: "Tunde Olagbaju",
-    title: "Youngest Son",
-    message: "To the man who showed me how to dream big and work hard - thank you, Dad. Your stories, your laughter, and your endless encouragement made life brighter. You taught us that family comes first, always. Rest well, knowing you raised us right. We'll make you proud.",
-    relationship: "Son"
-  },
-  {
-    id: 5,
-    name: "Rev. Dr. Samuel Adeyemi",
-    title: "Senior Pastor & Close Friend",
-    message: "Brother Olagbaju was a pillar in our community and a true servant of God. His faith was unwavering, his generosity boundless, and his love for people genuine. He touched countless lives and left an indelible mark on all who knew him. Heaven has gained a righteous soul. Well done, good and faithful servant.",
-    relationship: "Friend"
-  },
-  {
-    id: 6,
-    name: "Chief Bola Adeniran",
-    title: "Childhood Friend",
-    message: "We grew up together, faced life's challenges together, and celebrated victories together. You were more than a friend - you were a brother. Your loyalty, humor, and wisdom made every day better. The world has lost a great man, but heaven has gained an angel. Rest in peace, my dear friend.",
-    relationship: "Friend"
-  }
+  // {
+  //   id: 2,
+  //   name: "Adewale Olagbaju",
+  //   title: "Eldest Son",
+  //   message: "Dad, you taught me what it means to be a man of integrity and honor. Your strength, kindness, and unwavering support shaped who I am today. You were not just a father but a mentor and friend. Your legacy will continue through us. We love you forever, Dad.",
+  //   relationship: "Son"
+  // },
+  // {
+  //   id: 3,
+  //   name: "Funmilayo Olagbaju-Johnson",
+  //   title: "Daughter",
+  //   message: "Daddy, you were my first love and my hero. Your gentle words and warm embrace made every problem seem smaller. You believed in me when I didn't believe in myself. Thank you for being the best father a daughter could ask for. Your memory will forever be a blessing.",
+  //   relationship: "Daughter"
+  // },
+  // {
+  //   id: 4,
+  //   name: "Tunde Olagbaju",
+  //   title: "Youngest Son",
+  //   message: "To the man who showed me how to dream big and work hard - thank you, Dad. Your stories, your laughter, and your endless encouragement made life brighter. You taught us that family comes first, always. Rest well, knowing you raised us right. We'll make you proud.",
+  //   relationship: "Son"
+  // },
+  // {
+  //   id: 5,
+  //   name: "Rev. Dr. Samuel Adeyemi",
+  //   title: "Senior Pastor & Close Friend",
+  //   message: "Brother Olagbaju was a pillar in our community and a true servant of God. His faith was unwavering, his generosity boundless, and his love for people genuine. He touched countless lives and left an indelible mark on all who knew him. Heaven has gained a righteous soul. Well done, good and faithful servant.",
+  //   relationship: "Friend"
+  // },
+  // {
+  //   id: 6,
+  //   name: "Chief Bola Adeniran",
+  //   title: "Childhood Friend",
+  //   message: "We grew up together, faced life's challenges together, and celebrated victories together. You were more than a friend - you were a brother. Your loyalty, humor, and wisdom made every day better. The world has lost a great man, but heaven has gained an angel. Rest in peace, my dear friend.",
+  //   relationship: "Friend"
+  // }
 ];
 
 const EulogiesSection = () => {
