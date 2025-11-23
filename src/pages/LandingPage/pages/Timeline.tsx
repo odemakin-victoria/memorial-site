@@ -7,16 +7,16 @@ const Timeline = () => {
   const timelineData = [
     {
       year: "1951",
-      date: "April 24th",
+      date: "June 24th",
       title: "A New Beginning",
-      description: "Born on April 24, 1951, to Joseph Oladimeji Olagbaju and Princess Mobolaji Olagbaju (née Ademiluyi). \nOlaseni was the cherished second child in a dynamic family of nine.",
+      description: "Born on June 24, 1951, to Joseph Oladimeji Olagbaju and Princess Mobolaji Olagbaju (née Ademiluyi). \nOlaseni was the cherished second child in a dynamic family of nine.",
       icon: ""
     },
     {
       year: "1957",
       date: "(1957–1963)",
       title: "Foundational Years",
-      description: "His foundational years were spent at St Stephen Academy (1957–1963)",
+      description: "His foundational years were spent at St Stephen A, Ile Ife (1957–1963)",
       icon: ""
     },
     {
