@@ -102,7 +102,6 @@ const GalleryFullPage = ({ onBack }) => {
     }
 
     audioRef.current.play().catch((error) => {
-      console.log("Audio autoplay prevented:", error);
     });
 
     // Cleanup: stop audio when component unmounts

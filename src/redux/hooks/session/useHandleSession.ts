@@ -10,7 +10,6 @@ const useHandleSession = () => {
     const isAuthenticated = sessionStorage.getItem("isAuthenticated");
 
     if (!sessionStorage.getItem("isReloaded") && !isAuthenticated) {
-      console.log("or its hereeee");
       // Redirect to login if not authenticated
       if (
         router.pathname !== "/auth/signup" &&

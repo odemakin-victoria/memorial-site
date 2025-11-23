@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { X, Heart, User, MessageSquare, Loader, CheckCircle, AlertCircle } from 'lucide-react';
-import { CreateTribute, FetchTribute } from '@/redux/thunk/auth';
+import { X, Heart, User, MessageSquare, Loader, CheckCircle, AlertCircle, Edit2 } from 'lucide-react';
+import { CreateTribute, FetchTribute, UpdateTribute } from '@/redux/thunk/auth';
 import { useRouter } from "next/navigation";
 import { useAppDispatch } from "@/redux/hooks/hook";
 import { ErrorResponse, FetchTributeResponse } from '@/redux/types/auth';
@@ -16,6 +16,8 @@ const MemoryWall = () => {
     tribute: '',
     fullName: ''
   });
+	const [editingMemory, setEditingMemory] = useState(null);
+const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [likedMemories, setLikedMemories] = useState(new Set());
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,7 +64,6 @@ const MemoryWall = () => {
 
       if (meta.requestStatus === "fulfilled") {
         const res = payload as FetchTributeResponse[];
-        console.log(res, "this is the res ");
            setIsLoading(false);
 					  const formattedMemories = res.map(item => ({
       id: item.id,
@@ -140,6 +141,72 @@ const MemoryWall = () => {
     } catch (err) {
       setError('Failed to submit tribute. Please try again.');
       console.error('Error creating tribute:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+};
+const handleEdit = (memory) => {
+  setEditingMemory(memory);
+  setFormData({
+    tribute: memory.tribute,
+    fullName: memory.fullName
+  });
+  setIsEditModalOpen(true);
+};
+
+const handleUpdateSubmit = async (e) => {
+  e.preventDefault();
+  if (formData.tribute.trim() && formData.fullName.trim() && editingMemory) {
+    try {
+      setIsSubmitting(true);
+      setError(null);
+      
+      const result = await dispatch(
+        UpdateTribute({
+          id: editingMemory.id,
+          fullName: formData.fullName,
+          tribute: formData.tribute,
+        })
+      );
+
+      const { meta, payload } = result;
+
+      if (meta.requestStatus === "rejected") {
+        let err = payload as ErrorResponse;
+        setError(err.errorMsg || 'Failed to update tribute. Please try again.');
+        return;
+      }
+
+      if (meta.requestStatus === "fulfilled") {
+        let response = payload as FetchTributeResponse;
+        
+        // Update the memory in the list
+        setMemories(prev => prev.map(m => 
+          m.id === editingMemory.id ? {
+            ...m,
+            dateCreated: new Date(response.dateCreated).toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            }),
+            tribute: response.tribute,
+            fullName: response.fullName,
+            images: response.images?.[0]?.filePath || null,
+          } : m
+        ));
+        
+        setFormData({ tribute: '', fullName: '' });
+        setIsEditModalOpen(false);
+        setEditingMemory(null);
+        
+        // Show success animation
+        setShowSuccess(true);
+        setTimeout(() => setShowSuccess(false), 3000);
+      }
+    } catch (err) {
+      setError('Failed to update tribute. Please try again.');
+      console.error('Error updating tribute:', err);
     } finally {
       setIsSubmitting(false);
     }
@@ -224,24 +291,34 @@ const MemoryWall = () => {
               className="border-l-2 border-gray-200 pl-6 md:pl-10 py-4 animate-slide-in hover:border-[#fcbb68] transition-all duration-500"
     style={{ animationDelay: `${index * 100}ms` }}
   >
-    <div className="flex justify-between items-start mb-2">
-      <p className="text-sm text-gray-500 italic">{memory.dateCreated}</p>
-      <button
-        onClick={() => handleLike(memory.id)}
-        className="flex items-center gap-1 group"
-      >
-        <Heart
-          className={`w-5 h-5 transition-all duration-300 ${
-            likedMemories.has(memory.id)
-              ? 'fill-red-500 text-red-500 animate-heartBeat'
-              : 'text-gray-400 hover:text-red-500'
-          }`}
-        />
-        {memory.likes > 0 && (
-          <span className="text-sm text-gray-600 animate-fadeIn">{memory.likes}</span>
-        )}
-      </button>
-    </div>
+  <div className="flex justify-between items-start mb-2">
+  <p className="text-sm text-gray-500 italic">{memory.dateCreated}</p>
+  <div className="flex items-center gap-3">
+    <button
+      onClick={() => handleEdit(memory)}
+      className="flex items-center gap-1 group"
+    >
+      <Edit2
+        className="w-4 h-4 text-gray-400 hover:text-[#deac6c] transition-all duration-300"
+      />
+    </button>
+    <button
+      onClick={() => handleLike(memory.id)}
+      className="flex items-center gap-1 group"
+    >
+      <Heart
+        className={`w-5 h-5 transition-all duration-300 ${
+          likedMemories.has(memory.id)
+            ? 'fill-red-500 text-red-500 animate-heartBeat'
+            : 'text-gray-400 hover:text-red-500'
+        }`}
+      />
+      {memory.likes > 0 && (
+        <span className="text-sm text-gray-600 animate-fadeIn">{memory.likes}</span>
+      )}
+    </button>
+  </div>
+</div>
     
     <p className="text-gray-700 mb-2 font-light whitespace-pre-line leading-relaxed">
       {memory.tribute}
@@ -255,6 +332,101 @@ const MemoryWall = () => {
     </div>
   </div>
 ))}
+
+{/* Edit Modal */}
+{isEditModalOpen && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 animate-fadeIn">
+    <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-modalSlideUp">
+      <div className="sticky top-0 bg-white border-b border-gray-200 p-6 flex justify-between items-center rounded-t-2xl">
+        <h3 className="text-2xl font-bold text-gray-800">Edit Memory</h3>
+        <button
+          onClick={() => {
+            setIsEditModalOpen(false);
+            setEditingMemory(null);
+            setFormData({ tribute: '', fullName: '' });
+            setError(null);
+          }}
+          className="text-gray-500 hover:text-gray-700 transition-colors hover:rotate-90 duration-300"
+        >
+          <X className="w-6 h-6" />
+        </button>
+      </div>
+      
+      <form onSubmit={handleUpdateSubmit} className="p-6 space-y-6">
+        {error && (
+          <div className="p-3 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 animate-shake">
+            <AlertCircle className="w-4 h-4 text-red-500 flex-shrink-0" />
+            <p className="text-sm text-red-700">{error}</p>
+          </div>
+        )}
+
+        <div className="animate-slideRight" style={{ animationDelay: '0.1s' }}>
+          <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+            <User className="w-4 h-4" />
+            Your Name *
+          </label>
+          <input
+            type="text"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleInputChange}
+            required
+            placeholder="Enter your name"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#fcbb68] focus:border-transparent outline-none transition-all"
+            disabled={isSubmitting}
+          />
+        </div>
+
+        <div className="animate-slideRight" style={{ animationDelay: '0.2s' }}>
+          <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-2">
+            <MessageSquare className="w-4 h-4" />
+            Your Memory *
+          </label>
+          <textarea
+            name="tribute"
+            value={formData.tribute}
+            onChange={handleInputChange}
+            required
+            rows={6}
+            placeholder="Share your favorite memory, story, or message..."
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#fcbb68] focus:border-transparent outline-none transition-all resize-none"
+            disabled={isSubmitting}
+          />
+        </div>
+
+        <div className="flex gap-4 pt-4 animate-slideRight" style={{ animationDelay: '0.3s' }}>
+          <button
+            type="button"
+            onClick={() => {
+              setIsEditModalOpen(false);
+              setEditingMemory(null);
+              setFormData({ tribute: '', fullName: '' });
+              setError(null);
+            }}
+            className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-all"
+            disabled={isSubmitting}
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="flex-1 px-6 py-3 bg-[#deac6c] hover:bg-[#8a7160] text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
+          >
+            {isSubmitting ? (
+              <>
+                <Loader className="w-5 h-5 animate-spin" />
+                Updating...
+              </>
+            ) : (
+              'Update Memory'
+            )}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+)}
             </div>
 
             {/* See More Button */}
