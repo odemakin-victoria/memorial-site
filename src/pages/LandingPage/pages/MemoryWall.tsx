@@ -8,6 +8,11 @@ import { ErrorResponse, FetchTributeResponse } from '@/redux/types/auth';
 const MemoryWall = () => {
 		const router = useRouter();
 		const dispatch = useAppDispatch();
+			const toggleExpand = (id) => {
+				setExpandedId(expandedId === id ? null : id);
+			};
+		
+			const [expandedId, setExpandedId] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [memories, setMemories] = useState([]);
   const [displayedMemories, setDisplayedMemories] = useState([]);
@@ -231,7 +236,7 @@ const handleUpdateSubmit = async (e) => {
   };
 
   return (
-    <section id="leave-a-tribute" className="py-16 px-4 bg-gradient-to-b from-white to-orange-50">
+    <section id="leave-a-tribute" className="py-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-sm text-gray-600 mb-2 tracking-wide animate-fadeIn">
@@ -320,10 +325,20 @@ const handleUpdateSubmit = async (e) => {
   </div>
 </div>
     
-    <p className="text-gray-700 mb-2 font-light whitespace-pre-line leading-relaxed">
+  
+		 <p className={`text-gray-700 text-base md:text-lg leading-relaxed italic transition-all duration-300 ${
+                  expandedId === memory.id ? '' : 'line-clamp-3'
+                }`}>
       {memory.tribute}
-    </p>
-    
+                </p>
+								  {memory.tribute.length > 150 && (
+                  <button
+                    onClick={() => toggleExpand(memory.id)}
+                    className="mt-3 text-sm text-gray-500 hover:text-[#fcbb68] transition-colors duration-300 underline"
+                  >
+                    {expandedId === memory.id ? 'Show less' : 'Read more'}
+                  </button>
+                )}
     <div className="flex items-center gap-2 mt-3">
       
       <p className="text-[#deac6c] font-serif text-lg ml-auto">
