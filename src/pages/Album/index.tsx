@@ -53,6 +53,8 @@ const galleryImages = [
   { id: 1, url: Photo1, alt: "Family outdoor moment" },
   { id: 3, url: Photo3, alt: "Indoor family time" },
   { id: 4, url: Photo4, alt: "Sunset family" },
+	  { id: 46, url: Photo46, alt: "Together", objectFit: "contain" },
+
   { id: 8, url: Photo8, alt: "Family in water" },
   { id: 9, url: Photo9, alt: "Indoor family time", objectFit: "contain" },
   { id: 7, url: Photo7, alt: "Family outdoor moment", objectFit: "contain" },
@@ -72,6 +74,8 @@ const galleryImages = [
   { id: 28, url: Photo28, alt: "Portrait" },
 	
   { id: 16, url: Photo16, alt: "Beach time" },
+	  { id: 45, url: Photo45, alt: "Family photo",objectFit: "contain" },
+
   { id: 17, url: Photo17, alt: "Family moment" },
   { id: 19, url: Photo19, alt: "Together", objectFit: "contain" },
   { id: 21, url: Photo21, alt: "Family time", objectFit: "contain" },
@@ -91,10 +95,8 @@ const galleryImages = [
   { id: 40, url: Photo40, alt: "Family photo" },
   { id: 41, url: Photo41, alt: "Together" },
   { id: 42, url: Photo42, alt: "Family gathering" },
-	  { id: 43, url: Photo43, alt: "Family gathering" },
+	  { id: 43, url: Photo43, alt: "Family gathering",objectFit: "contain" },
   { id: 44, url: Photo44, alt: "Wedding celebration" },
-  { id: 45, url: Photo45, alt: "Family photo" },
-  { id: 46, url: Photo46, alt: "Together" },
 ];
 
 const GalleryFullPage = ({ onBack }) => {
