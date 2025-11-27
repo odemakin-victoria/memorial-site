@@ -16,7 +16,6 @@ import Photo11 from "../../../public/assets/images/daddy-bride-3.jpg";
 import Photo12 from "../../../public/assets/images/daddy-family-3.jpg";
 import Photo13 from "../../../public/assets/images/daddy-family-5.jpg";
 import Photo14 from "../../../public/assets/images/daddy-grandpa.jpg";
-import Photo15 from "../../../public/assets/images/daddy-christmas.jpg";
 import Photo16 from "../../../public/assets/images/daddy-family-7.jpg";
 import Photo17 from "../../../public/assets/images/daddy-in-laws.jpg";
 import Photo19 from "../../../public/assets/images/daddy-mummy-2.jpg";
@@ -46,6 +45,7 @@ import Photo43 from "../../../public/assets/images/daddy-silbings-8.jpg";
 import Photo44 from "../../../public/assets/images/daddy-silbings.jpg";
 import Photo45 from "../../../public/assets/images/family-daddy.jpg";
 import Photo46 from "../../../public/assets/images/daddy-christmas.jpg";
+import Photo47 from "../../../public/assets/images/daddy-family-8.jpg";
 
 const galleryImages = [
   { id: 0, url: Photo0, alt: "young daddy" },
@@ -64,7 +64,6 @@ const galleryImages = [
   { id: 10, url: Photo10, alt: "Sunset family", objectFit: "contain" },
   { id: 12, url: Photo12, alt: "Beach time" },
   { id: 13, url: Photo13, alt: "Family outdoor moment", objectFit: "contain" },
-	   { id: 15, url: Photo15, alt: "Happy moments" },
  
 	{ id: 36, url: Photo36, alt: "Family photo", objectFit: "contain" },
 
@@ -96,6 +95,8 @@ const galleryImages = [
   { id: 41, url: Photo41, alt: "Together" },
   { id: 42, url: Photo42, alt: "Family gathering" },
 	  { id: 43, url: Photo43, alt: "Family gathering",objectFit: "contain" },
+			  { id: 45, url: Photo47, alt: "Family gathering",objectFit: "contain" },
+
   { id: 44, url: Photo44, alt: "Wedding celebration" },
 ];
 
