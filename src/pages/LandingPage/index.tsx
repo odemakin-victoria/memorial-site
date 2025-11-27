@@ -24,13 +24,12 @@ export default function MemorialPage() {
           <Navigation />
           <HeroSection />
           <Obituary />
-          <MemoryWall />
-          <Timeline />
-					          <Favorites />
-
           <Eulogies />
-          <Gallery />
           <Service />
+          <Timeline />
+					<Favorites />
+          <Gallery />
+          <MemoryWall />
         </>
       )}
     </>

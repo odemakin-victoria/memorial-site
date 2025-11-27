@@ -6,12 +6,12 @@ const Navigation = () => {
 
   const menuItems = [
     'Biography',
-    'Leave a Tribute',
+    'Eulogies',
+    'Service',
     'Timeline',
 		'Favorites',
-    'Eulogies',
     'Gallery',
-    'Service'
+    'Leave a Tribute',
   ];
 
   useEffect(() => {

@@ -16,10 +16,9 @@ import Photo11 from "../../../public/assets/images/daddy-bride-3.jpg";
 import Photo12 from "../../../public/assets/images/daddy-family-3.jpg";
 import Photo13 from "../../../public/assets/images/daddy-family-5.jpg";
 import Photo14 from "../../../public/assets/images/daddy-grandpa.jpg";
-import Photo15 from "../../../public/assets/images/daddy-family-6.jpg";
+import Photo15 from "../../../public/assets/images/daddy-christmas.jpg";
 import Photo16 from "../../../public/assets/images/daddy-family-7.jpg";
 import Photo17 from "../../../public/assets/images/daddy-in-laws.jpg";
-import Photo18 from "../../../public/assets/images/daddy-married.jpg";
 import Photo19 from "../../../public/assets/images/daddy-mummy-2.jpg";
 import Photo20 from "../../../public/assets/images/daddy-son-wedding.jpg";
 import Photo21 from "../../../public/assets/images/daddy-mummy-3.jpg";
@@ -43,6 +42,10 @@ import Photo40 from "../../../public/assets/images/daddy-silbing-4.jpg";
 import Photo41 from "../../../public/assets/images/daddy-silbing-5.jpg";
 import Photo42 from "../../../public/assets/images/daddy-silbing-6.jpg";
 import Photo37 from "../../../public/assets/images/daddy-silbing-7.jpg";
+import Photo43 from "../../../public/assets/images/daddy-silbings-8.jpg";
+import Photo44 from "../../../public/assets/images/daddy-silbings.jpg";
+import Photo45 from "../../../public/assets/images/family-daddy.jpg";
+import Photo46 from "../../../public/assets/images/daddy-christmas.jpg";
 
 const galleryImages = [
   { id: 0, url: Photo0, alt: "young daddy" },
@@ -88,6 +91,10 @@ const galleryImages = [
   { id: 40, url: Photo40, alt: "Family photo" },
   { id: 41, url: Photo41, alt: "Together" },
   { id: 42, url: Photo42, alt: "Family gathering" },
+	  { id: 43, url: Photo43, alt: "Family gathering" },
+  { id: 44, url: Photo44, alt: "Wedding celebration" },
+  { id: 45, url: Photo45, alt: "Family photo" },
+  { id: 46, url: Photo46, alt: "Together" },
 ];
 
 const GalleryFullPage = ({ onBack }) => {
